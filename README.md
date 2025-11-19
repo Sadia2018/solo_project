@@ -1,32 +1,48 @@
-# ✈️ Welcome to iFly\! - Virtual Flying Experience
+ Welcome to iFly! - Virtual Flying Experience
+===============================================
 
-This is the central guide for the **iFly** application, your platform for booking and managing virtual flight experiences.
+This is the central guide for the **iFly** application, your platform for tracking, reviewing, and managing virtual flight experiences.
 
------
+🚀 What is iFly?
+----------------
 
-## 🚀 What is iFly?
+The iFly application is a web-based platform designed for enthusiasts of flight simulators and virtual aviation. It uses a robust backend to store flight logs and data, which is then presented through a dynamic web interface.
 
-The iFly application is a web-based platform designed for enthusiasts of flight simulators and virtual aviation. 
+### Key Features 
 
+*   **Virtual Flight Logging:** 
+    
+*   **Experience Review:** 
+    
+*   **Database Management:** Centralized storage for all flight data using MySQL.
+    
+*   **Dynamic Interface:** Interactive elements built with **JavaScript** and rendered using **Jinja2** templates.
+    
+    
 
------
+💻 Getting Started (Accessing the App)
+--------------------------------------
 
-## 💻 Getting Started (Accessing the App)
+### Online Access
 
+If the iFly application is already deployed on a web server (like Heroku), you can access it directly:
+
+*   **Application URL:** \[Insert Live URL Here\]
+    
+*   **Supported Browsers:** We recommend using the latest versions of **Chrome, Firefox, or Edge**.
+    
 
 ### Local Access (General Instructions)
 
 If you are running the application on your own computer, follow these general steps:
 
-1.  **Start the Server:** The application is run using a file called `server.py`. Once all technical setup is complete (see the **Local Development Setup** below), the server is typically started with a simple command:
-    ```bash
-    python server.py
-    ```
-2.  **Open in Browser:** After the server starts successfully, open your web browser and navigate to the address provided in your terminal (usually **`http://localhost:5000`**).
+1.  python server.py
+    
+2.  **Open in Browser:** After the server starts successfully, open your web browser and navigate to the address provided in your terminal (usually **http://localhost:5000**).
+    
 
------
-
-## 🛠️ Local Development Setup
+🛠️ Local Development Setup
+---------------------------
 
 This guide walks technical users through setting up the environment, dependencies, and database required to run the application locally.
 
@@ -34,71 +50,68 @@ This guide walks technical users through setting up the environment, dependencie
 
 You must have the following software installed:
 
-  * **Python 3** (3.8+ recommended)
-  * **MySQL Server** (version 8.0+ recommended)
-  * **Git**
+*   **Python 3** (3.8+ recommended)
+    
+*   **MySQL Server** (version 8.0+ recommended)
+    
+*   **Git**
+    
 
 ### Installation Steps
 
-#### 1\. Clone the Repository
+1.  git clone \[Your Repository URL\]cd \[Your Project Folder Name\]
+    
+2.  **Install Python Dependencies**This project uses either Pipenv or standard pip for dependency management.
+    
+    *   \# Install all required packages (as listed in Pipfile/Pipfile.lock)pipenv install# Activate the virtual environmentpipenv shell
+        
+    *   \# Create a virtual environment (best practice)python3 -m venv venvsource venv/bin/activate # On Windows, use: .\\venv\\Scripts\\activate# Install packagespip install -r requirements.txt
+        
+3.  **Database Configuration (MySQL)**This step requires a running MySQL server instance.
+    
+    1.  CREATE DATABASE ifly\_db;
+        
+    2.  **Apply Schema:** The required tables and relationships are defined in the **MySQL Workbench** file: sightings\_erd.mwb. You will need to use this file to generate and execute the necessary SQL statements to create the table structure in the ifly\_db database.
+        
+    3.  \# Example .env contentDATABASE\_URL="mysql+pymysql://:@localhost/ifly\_db"SECRET\_KEY="your\_flask\_secret\_key"
+        
+4.  python server.pyThe server should now be running, accessible at the local address specified in the console output.
+    
 
-Open your terminal and clone the source code:
+⚙️ For Technical Users & Installers (Summary)
+---------------------------------------------
 
-```bash
-git clone [Your Repository URL]
-cd [Your Project Folder Name]
+This section provides a quick technical overview of the application's components.
 
-### Local Access (General Instructions)
+Stack Component
 
-If you are running the application on your own computer, follow these general steps:
+Files/Technologies Used
 
-1.  **Start the Server:** The application is run using a file called `server.py`. Once all technical setup is complete (see the **Local Development Setup** below), the server is typically started with a simple command:
-    ```bash
-    python server.py
-    ```
-2.  **Open in Browser:** After the server starts successfully, open your web browser and navigate to the address provided in your terminal (usually **`http://localhost:5000`**).
+Purpose
 
------
+**Backend Framework**
 
-## 🛠️ Local Development Setup
+server.py, flask\_app/
 
-This guide walks technical users through setting up the environment, dependencies, and database required to run the application locally.
+The core application logic built using **Flask**.
 
-### Prerequisites
+**Database**
 
-You must have the following software installed:
+sightings\_erd.mwb
 
-  * **Python 3** (3.8+ recommended)
-  * **MySQL Server** (version 8.0+ recommended)
-  * **Git**
+**MySQL** is the required database, managed via **Flask-SQLAlchemy**.
 
-### Installation Steps
+**Frontend**
 
-#### 1\. Clone the Repository
+flask\_app/templates/
 
-Open your terminal and clone the source code:
+**Jinja2** is used for dynamic HTML templating, and **JavaScript** powers the front-end interactivity.
 
-```bash
-git clone [Your Repository URL]
-cd [Your Project Folder Name]
-2. Install Python DependenciesThis project uses either Pipenv or standard pip for dependency management.Option A: Using Pipenv (Recommended)Bash# Install all required packages (as listed in Pipfile/Pipfile.lock)
-pipenv install
+**Configuration**
 
-# Activate the virtual environment
-pipenv shell
-Option B: Using pip (via requirements.txt)Bash# Create a virtual environment (best practice)
-python3 -m venv venv
-source venv/bin/activate  # On Windows, use: .\venv\Scripts\activate
+requirements.txt, Pipfile, Procfile
 
-# Install packages
-pip install -r requirements.txt
+Manages Python dependencies and deployment on platforms like Heroku.
 
-3. Database Configuration (MySQL)This step requires a running MySQL server instance.Create the Database: Log into your MySQL server and create a new schema.SQLCREATE DATABASE ifly_db;
-Apply Schema: The required tables and relationships are defined in the MySQL Workbench file: sightings_erd.mwb. You will need to use this file to generate and execute the necessary SQL statements to create the table structure in the ifly_db database.Set Environment Variables: Create a local .env file (or set variables in your shell) to provide the application with database connection credentials. This is crucial for Flask-SQLAlchemy to connect.# Example .env content
-DATABASE_URL="mysql+pymysql://<USER>:<PASSWORD>@localhost/ifly_db"
-SECRET_KEY="your_flask_secret_key"
-
-4. Run the Application With dependencies installed and the database configured, you can start the Flask server:Bashpython server.py
-
-The server should now be running, accessible at the local address specified in the console output.
+> **Note on Database:** This application requires a **MySQL** database setup according to the blueprint found in sightings\_erd.mwb.
 
