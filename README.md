@@ -8,7 +8,7 @@ This is the central guide for the iFly application, your platform for tracking a
 
 The iFly application is a web-based tool designed to help you view, manage, and interact with specific **sighting records** (likely related to aircraft or other observed phenomena).
 
-### Key Features (Likely)
+### Key Features 
 
 * View Sighting Records: See a list or map of all recorded sightings.
 * Add New Sightings: Input new data, including time, location, and details.
@@ -16,18 +16,10 @@ The iFly application is a web-based tool designed to help you view, manage, and 
 
 ---
 
-## 📚 User Manual & Help
-
-The most important place to find detailed instructions on how to use all the features of the iFly application is in our dedicated user guide.
-
-* 👉 **Find detailed usage instructions here:** [`UserManual.md`](UserManual.md)
-
----
-
-## 💻 Getting Started (Accessing the App)
+## 💻 Getting Started 
 
 
-### Local Access (For Testing or Development)
+### Local Access 
 
 If you are running the application on your own computer, follow these general steps:
 
@@ -53,10 +45,7 @@ This section is for developers or IT staff responsible for setting up or maintai
 
 > **Note on Database:** This application requires a **MySQL** database setup according to the blueprint found in `sightings_erd.mwb`.
 
----
 
-## ❓ Need Assistance?
 
-* Check the [`UserManual.md`](UserManual.md) 
 
 ---
