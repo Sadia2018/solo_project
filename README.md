@@ -23,16 +23,10 @@ The iFly application is a web-based platform designed for enthusiasts of flight 
 💻 Getting Started (Accessing the App)
 --------------------------------------
 
-### Online Access
 
-If the iFly application is already deployed on a web server (like Heroku), you can access it directly:
-
-*   **Application URL:** \[Insert Live URL Here\]
-    
-*   **Supported Browsers:** We recommend using the latest versions of **Chrome, Firefox, or Edge**.
     
 
-### Local Access (General Instructions)
+### Local Access 
 
 If you are running the application on your own computer, follow these general steps:
 
