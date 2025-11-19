@@ -1,6 +1,6 @@
 # ✈️ Welcome to iFly!
 
-This is the central guide for the iFly application, your platform for tracking and managing flight or sighting data.
+This is the central guide for the iFly application, your platform for virtual flying
 
 ---
 
@@ -10,11 +10,12 @@ The iFly application is a web-based tool designed to help you view, manage, and 
 
 ### Key Features 
 
-* View Sighting Records: See a list or map of all recorded sightings.
-* Add New Sightings: Input new data, including time, location, and details.
-* User Management: Secure login and profile management.
+Virtual Flight sightings 
 
----
+Database Management: Centralized storage for all flight data using MySQL.
+
+Dynamic Interface: Interactive elements built with JavaScript and rendered using Jinja2 templates.
+
 
 ## 💻 Getting Started 
 
